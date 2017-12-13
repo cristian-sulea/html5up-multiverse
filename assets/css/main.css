@@ -1298,7 +1298,7 @@
 			-webkit-transition: opacity 0.5s ease, visibility 0.5s;
 			-ms-transition: opacity 0.5s ease, visibility 0.5s;
 			transition: opacity 0.5s ease, visibility 0.5s;
-			background: rgba(36, 38, 41, 0.5);
+			background: rgba(36, 38, 41, 0.65);
 			content: '';
 			display: block;
 			height: 100%;
@@ -1314,14 +1314,14 @@
 			body.ie #wrapper:after {
 				background: rgba(36, 38, 41, 0.8);
 			}
-
+/*
 		body.modal-active #wrapper {
 			-moz-filter: blur(8px);
 			-webkit-filter: blur(8px);
 			-ms-filter: blur(8px);
 			filter: blur(8px);
 		}
-
+*/
 			body.modal-active #wrapper:after {
 				-moz-pointer-events: auto;
 				-webkit-pointer-events: auto;

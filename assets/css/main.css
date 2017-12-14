@@ -217,6 +217,9 @@
 		letter-spacing: 0.1em;
 		line-height: 1.5;
 		margin: 0 0 1em 0;
+/* 		text-transform: uppercase; */
+	}
+	h2, h3, h4, h5, h6 {
 		text-transform: uppercase;
 	}
 
@@ -1418,7 +1421,7 @@
 		#header h1 {
 			color: #a0a0a1;
 			display: inline-block;
-			font-size: 1em;
+/* 			font-size: 1em; */
 			line-height: 1;
 			margin: 0;
 			vertical-align: middle;
@@ -1502,7 +1505,7 @@
 			}
 
 			#header h1 {
-				font-size: 0.9em;
+/* 				font-size: 0.9em; */
 			}
 
 			#header nav > ul > li a {

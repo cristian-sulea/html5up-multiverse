@@ -54,17 +54,33 @@
 
 	<script>
 		(function() {
+			
+			var isAlbumsList;
+			var album = window.location.href;
+			
+			if (album.indexOf('?') > 0) {
+				isAlbumsList = false;
+				album = 'albums/' + album.substring(album.indexOf('?') + 1);
+			} else {
+				isAlbumsList = true;
+				album = 'albums';
+			}
+			
 			$.ajax({
-				  url: "albums/album1/photos.json",
+				  url: isAlbumsList ? (album + '/albums.json') : (album + '/photos.json'),
 				  dataType: 'json',
 				  async: false,
-				  success: function(photos) {
-						$.each(photos, function(i, photo) {
+				  success: function(data) {
+						$.each(data, function(i, photo) {
 							
-							$article = $("<article>");
-							$article.attr("class", "thumb");
+							$article = $('<article>');
+							$article.attr('class', 'thumb');
 							
-							$article.append('<a href="albums/album1/photos/' + photo.href + '" class="image"><img src="albums/album1/photos/' + (photo.thumb ? photo.thumb : photo.href) + '" alt="" /></a>');
+							if (isAlbumsList) {
+								$article.append('<a href="?' + photo.href + '" class="image" data-poptrox="ignore"><img src="' + album + '/' + photo.href + '/photos/' + photo.thumb + '" alt="" /></a>');
+							} else {
+								$article.append('<a href="' + album + '/photos/' + photo.href + '" class="image"><img src="' + album + '/photos/' + (photo.thumb ? photo.thumb : photo.href) + '" alt="" /></a>');
+							}
 							
 							if (photo.title) {
 								$article.append('<h2>' + photo.title + '</h2>');
@@ -74,7 +90,7 @@
 								$article.append('<p>' + photo.description + '</p>');								
 							}
 							
-							$article.appendTo("#main");
+							$article.appendTo('#main');
 						});
 					}
 				});

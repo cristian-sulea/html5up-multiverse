@@ -1,0 +1,12 @@
+[
+	{
+		"title": "First Album",
+		"href": "album1",
+		"thumb": "01.jpg"
+	},
+	{
+		"title": "Second Album",
+		"href": "album2",
+		"thumb": "03.jpg"
+	}
+]
